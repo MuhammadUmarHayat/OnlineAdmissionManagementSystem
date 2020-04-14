@@ -1,0 +1,93 @@
+﻿
+
+CREATE TABLE [dbo].[Candidate_Personal_Information] (
+    [Id]            INT            IDENTITY (1, 1) NOT NULL,
+    [name]          NVARCHAR (50)  NULL,
+    [FatherName]    NVARCHAR (50)  NULL,
+    [CNIC]          NVARCHAR (50)  NULL,
+    [Password]      NVARCHAR (50)  NULL,
+    [Email]         NVARCHAR (50)  NULL,
+    [Gender]        NVARCHAR (50)  NULL,
+    [PostalAddress] NVARCHAR (300) NULL,
+    [image]         NVARCHAR (50)  NULL,
+    [Province]      NVARCHAR (50)  NULL,
+    [mobile]        NVARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+Candidate_Personal_Information (name,FatherName,CNIC,Password,Email,Gender,PostalAddress,image,Province,mobile)
+
+CREATE TABLE [dbo].[StudyProgram] (
+    [Id]                   INT            IDENTITY (1, 1) NOT NULL,
+    [Title]                NVARCHAR (100) NULL,
+    [Details]              NVARCHAR (200) NULL,
+    [EligibilityCriteria] NVARCHAR (50)  NULL,
+    [Education]            NVARCHAR (50)  NULL,
+    [Duration]             NVARCHAR (50)  NULL,
+    [Level]                NVARCHAR (50)  NULL,
+    [CreditHours]          NVARCHAR (50)  NULL,
+    [Status]               NVARCHAR (50)  NULL,
+    [department]           NVARCHAR (50)  NULL,
+    [Specialization]       NVARCHAR (50)  NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+StudyProgram(Title,Details,EligibilityCriteria,Education,Duration,Level,CreditHours,Status,department,Specialization)
+disable
+provice
+openmerit
+Women
+Parent
+
+CREATE TABLE [dbo].[Qouta] (
+    [Id]            INT           IDENTITY (1, 1) NOT NULL,
+    [title]         NVARCHAR (50) NULL,
+    [DegreeProgram] NVARCHAR (50) NULL,
+    [Percentage]    NVARCHAR (50) NULL,
+    [Semester] NVARCHAR(50) NULL, 
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+Qouta(title,DegreeProgram,Percentage,Semester) 
+
+
+CREATE TABLE [dbo].[Degree_Seats] (
+    [Id]            INT           NOT NULL IDENTITY,
+    [SemesterName]  NVARCHAR (50) NULL,
+    [DegreeProgram] NVARCHAR (50) NULL,
+    [TotalSeats]    INT           NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+//////////////////////////////////////////////
+
+CREATE TABLE [dbo].[Candidate_Qualification] (
+    [Id]             INT           IDENTITY (1, 1) NOT NULL,
+    [CNIC]           NVARCHAR (50) NULL,
+    [Degree_title]   NVARCHAR (50) NULL,
+    [Board]          NVARCHAR (50) NULL,
+    [TotalMarks]     FLOAT           NULL,
+    [MarksObtained]  FLOAT           NULL,
+    [Percentage]     FLOAT NULL,
+    [Specialization] NVARCHAR (50) NULL,
+    [Status]         NVARCHAR (50) NULL,
+    [Level]          NVARCHAR(50)    NULL,
+    [PassingYear] NVARCHAR(50) NULL, 
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+Candidate_Qualification(CNIC,Degree_title,Board,TotalMarks,MarksObtained,Percentage,Specialization,Status,Level,PassingYear)
+
+
+ CREATE TABLE [dbo].[Candidate_Preferences] (
+    [Id]          INT        IDENTITY (1, 1) NOT NULL,
+    [cnic]        NVARCHAR(50) NULL,
+    [preference1] NVARCHAR(50) NULL,
+    [preference2] NVARCHAR(50) NULL,
+    [prefrence3]  NVARCHAR(50) NULL,
+    [Date] DATE NULL, 
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+Candidate_Preferences(cnic,preference1,preference2,preference3,date)
+
+
+

@@ -1,0 +1,9 @@
+﻿
+
+
+select distinct p.preference1,p.preference2,p.prefrence3,a.Candidate_Total_Average  from Candidate_Preferences p,Candidate_Average a where p.cnic ='b' ;
+select distinct p.preference1,a.Candidate_Total_Average  from Candidate_Preferences p,Candidate_Average a where p.cnic ='b' ;
+
+select distinct p.cnic, p.preference1,a.Candidate_Total_Average,d.TotalSeats   from Candidate_Preferences p,Candidate_Average a,Degree_Seats d where preference1='MCS'  order by a.Candidate_Total_Average ASC  ;
+
+select  distinct  top 10 p.cnic, p.preference1,a.Candidate_Total_Average,d.TotalSeats   from Candidate_Preferences p,Candidate_Average a,Degree_Seats d where preference1='MCS'  order by a.Candidate_Total_Average ASC  ;
